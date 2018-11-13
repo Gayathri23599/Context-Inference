@@ -1,0 +1,20 @@
+project
+toc
+dsp
+embedded
+python
+c
+c++
+computer
+coding
+contest
+geeksforgeeks
+networks
+lab
+turing machine
+automata
+digital
+signal
+analog
+BigData
+computer science
