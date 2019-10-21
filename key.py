@@ -11,20 +11,27 @@ def keyword_extraction(inp):
 		fp = f.readline()
 	k = 0
 	for i in inp:
-		score = -1
+		s = -1
 		temp = []
-		temp.append(i)
 		ind = inp.index(i)
 		if pos[ind][1] == 'NN':
-			score = 1
+			s = 1
+		try:
+			j = ret.index(i)
+			score = ret[j][1]
+		except:
+			score = 0
 		if i.lower() in l:	
-			#score += score*0.5
-			temp.append(score)
+			score += s*0.5
 		else:
-			#score += score
+			score += s*1
+		try:
+			ret[j][1] = score
+		except:
+			temp.append(i)
 			temp.append(score)
 		ret.append(list(temp))
-		k++;
+		k = k + 1
 	ret = sorted(ret,key=lambda l:l[1], reverse = True)
 	print (ret)
 	return ret[:3]
